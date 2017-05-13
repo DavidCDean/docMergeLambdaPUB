@@ -1,0 +1,15 @@
+version: 0.1
+
+phases:
+  build:
+    commands:
+      - echo Build started on `date`...
+      - echo Fetching Dependencies...
+      - cd src && pip install -r ./requirements.txt -t .
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - '**/*'
+  base-directory: src
